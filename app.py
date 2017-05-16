@@ -5,7 +5,7 @@ from lxml import html
 url = 'http://www.realmadrid.com/en/football/schedule'
 response = requests.get(url)
 html = response.content
-soup = bs(html)
+soup = bs(html,"html.parser")
 loc = soup.find('p', {'class': 'm_highlighted_next_game_location'}).contents
 loc1 = loc[0]
 if "Santiago" in loc1:
